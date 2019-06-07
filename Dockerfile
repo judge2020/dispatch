@@ -1,4 +1,4 @@
-FROM scratch
+FROM alpine
 
 LABEL "name"="Discord Dispatch"
 LABEL "maintainer"="Judge2020 <8601934+judge2020@users.noreply.github.com>"
