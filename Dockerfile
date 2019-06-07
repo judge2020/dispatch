@@ -6,7 +6,7 @@ LABEL "version"="1.0.0"
 LABEL "repository"="https://github.com/judge2020/dispatch-docker"
 
 LABEL "com.github.actions.name"="Discord Dispatch"
-LABEL "com.github.actions.description"="Use Discord's Dispatch CLI"
+LABEL "com.github.actions.description"="Use Discord's Dispatch CLI for the Discord Games marketplace"
 LABEL "com.github.actions.icon"="upload-cloud"
 LABEL "com.github.actions.color"="gray-dark"
 
