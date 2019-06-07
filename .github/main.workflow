@@ -29,7 +29,7 @@ action "docker-login" {
 action "docker-tag sha" {
   uses = "actions/docker/tag@master"
   needs = ["filter"]
-  args = "judge2020/dispatch:latest judge2020/dispatch:${GITHUB_SHA}"
+  args = "judge2020/dispatch:latest judge2020/dispatch:$(echo ${GITHUB_SHA} | cut -d':' -f1)"
 }
 
 action "docker-push latest" {
@@ -41,5 +41,5 @@ action "docker-push latest" {
 action "docker-push sha" {
   uses = "actions/docker/cli@master"
   needs = ["docker-tag sha", "docker-login"]
-  args = "push judge2020/dispatch:${GITHUB_SHA}"
+  args = "push judge2020/dispatch:$(echo ${GITHUB_SHA} | cut -d':' -f1)"
 }
