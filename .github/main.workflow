@@ -1,6 +1,6 @@
 workflow "Build" {
   on = "push"
-  resolves = ["docker-push sha", "docker-push latest"]
+  resolves = ["docker-push latest"]
 }
 
 action "download-dispatch" {
@@ -26,20 +26,8 @@ action "docker-login" {
   secrets = ["DOCKER_USERNAME", "DOCKER_PASSWORD"]
 }
 
-action "docker-tag sha" {
-  uses = "actions/docker/tag@master"
-  needs = ["filter"]
-  args = "judge2020/dispatch:latest judge2020/dispatch:$(echo ${GITHUB_SHA} | cut -d':' -f1)"
-}
-
 action "docker-push latest" {
   uses = "actions/docker/cli@8cdf801b322af5f369e00d85e9cf3a7122f49108"
   args = "push judge2020/dispatch:latest"
   needs = ["docker-login"]
-}
-
-action "docker-push sha" {
-  uses = "actions/docker/cli@master"
-  needs = ["docker-tag sha", "docker-login"]
-  args = "push judge2020/dispatch:$(echo ${GITHUB_SHA} | cut -d':' -f1)"
 }
