@@ -11,4 +11,4 @@ LABEL "com.github.actions.icon"="log-in"
 LABEL "com.github.actions.color"="gray-dark"
 
 COPY login.sh /
-ENTRYPOINT ["/login.sh"]
+ENTRYPOINT sh /login.sh
