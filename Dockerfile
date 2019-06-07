@@ -10,5 +10,9 @@ LABEL "com.github.actions.description"="Use Discord's Dispatch CLI for the Disco
 LABEL "com.github.actions.icon"="upload-cloud"
 LABEL "com.github.actions.color"="gray-dark"
 
-COPY dispatch /
+RUN  apt-get update \
+  && apt-get install -y wget \
+  && rm -rf /var/lib/apt/lists/* \
+  && wget -O /dispatch https://dl-dispatch.discordapp.net/download/linux \
+  && chmod +x /dispatch
 ENTRYPOINT ["/dispatch"]

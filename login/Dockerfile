@@ -10,6 +10,5 @@ LABEL "com.github.actions.description"="Set up credentials to log-in to Dispatch
 LABEL "com.github.actions.icon"="log-in"
 LABEL "com.github.actions.color"="gray-dark"
 
-COPY dispatch /
 COPY login.sh /
 ENTRYPOINT ["/login.sh"]
