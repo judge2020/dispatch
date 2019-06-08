@@ -24,7 +24,7 @@ Now go to your repository settings -> secrets and add these as secret environmen
 
 * `DISCORD_USER_ID`: the `user_id` from the file
 * `DISCORD_ACCESS_TOKEN`: the `access_token` from the file
-* `DISCORD_REFRESH_TOKEN`: the `access_token` from the file
+* `DISCORD_REFRESH_TOKEN`: the `refresh_token` from the file
 
 Afterwards:
 
